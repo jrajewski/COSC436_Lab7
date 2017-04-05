@@ -6,12 +6,15 @@ public class SystemInterface{
   }
   
   public static String[] addItem(String name, boolean vegetarian){
-    MenuItem item = invoker.addItem(new MenuItem(itemName, vegetarian));
-    return item.toString();
+    MenuItem item = invoker.addItem(new MenuItem(name, vegetarian));
+    String[] itemArray = {item.toString()};
+    return itemArray;
   }
   
   public static String[] removeItem(String name){
     MenuItem item = invoker.removeItem(name);
+    String[] itemArray = {item.toString()};
+    return itemArray;
   }
   
   public static String[] getItems(){

@@ -7,7 +7,7 @@ public class Menu{
   public Integer nonVegetarian(){
     int count = 0;
     for(int i = 0; i < menu.size; i++){
-      if(menu(i).isVegetarian())
+      if(menu[i].isVegetarian())
         count++;
     }
     return count;
@@ -16,7 +16,7 @@ public class Menu{
   public String[] getItems(){
     String[] items = new String[menu.size];
     for(int i = 0; i < items.length; i++){
-      items[i] = menu(i);
+      items[i] = menu[i];
     }
   }
   
@@ -29,7 +29,7 @@ public class Menu{
   //why not void
   public MenuItem remove(MenuItem item){
     for(int i = 0; i < menu.size; i++){
-      if(item.toSting().equals(menu(i).toString())){
+      if(item.toString().equals(menu[i].toString())){
         menu.remove(i);
         return item;
       }
