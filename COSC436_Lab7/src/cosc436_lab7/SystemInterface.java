@@ -10,6 +10,9 @@ public class SystemInterface{
   
   public static String[] addItem(String name, boolean vegetarian){
     MenuItem item = invoker.addItem(new MenuItem(name, vegetarian));
+    //this prints out null
+    //it should print the name of the item
+    System.out.println(item.toString());
     String[] itemArray = {item.toString()};
     return itemArray;
   }

@@ -19,6 +19,7 @@ public class UserInterface{
             System.out.println("Is this vegetarian? (true/false)");
             boolean vegetarian;
             vegetarian = input.nextBoolean();
+            System.out.println(addName + " " + vegetarian);
             SystemInterface.addItem(addName, vegetarian);
             break;
           case 2:
@@ -27,10 +28,12 @@ public class UserInterface{
             SystemInterface.removeItem(removeName);
             break;
           case 3:
-              String[] menu = SystemInterface.getItems();
-              for(int i = 0; i < menu.length; i++){
-              System.out.println(menu[i]);
-          }
+            String[] menu = SystemInterface.getItems();
+            //added this line for debugging purposes
+            System.out.println(menu.length + " items are on the menu.");
+            for(int i = 0; i < menu.length; i++){
+                System.out.println(menu[i].toString());
+            }
             break;
           case 4:
             System.out.println(SystemInterface.getNumVegetarian() + " vegetarian items on the menu.");

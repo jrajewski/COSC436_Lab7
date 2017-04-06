@@ -8,8 +8,8 @@ public class MenuItem{
   private String name;
   
   public MenuItem(String name, boolean veg){
-    description = name;
-    vegetarian = veg;
+    this.description = name;
+    this.vegetarian = veg;
   }
   
   public String toString(){

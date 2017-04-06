@@ -8,8 +8,9 @@ public class Invoker{
   }
   
   public MenuItem addItem(MenuItem item){
-      //how do you reference the CMDAddItem obejct?
     CMDAddItem addItem = new CMDAddItem(aggregator, item);
+    //this also prints out null
+    System.out.println(item.toString());
     addItem.execute();
     return item;
   }
@@ -22,12 +23,13 @@ public class Invoker{
   
   public String[] getMenu(){
     CMDGetItems getItems = new CMDGetItems(aggregator);
-    return getItems.execute();
+    String[] items = getItems.execute();
+    return items;
   }
   
   public Integer getNumVegetarian(){
-      CMDGetNumVegetarian numVegetarian = new CMDGetNumVegetarian(aggregator);
-      return numVegetarian.execute();
+    CMDGetNumVegetarian numVegetarian = new CMDGetNumVegetarian(aggregator);
+    return numVegetarian.execute();
   }
   
   

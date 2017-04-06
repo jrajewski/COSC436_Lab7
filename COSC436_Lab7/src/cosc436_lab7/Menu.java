@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Menu{
   private ArrayList <MenuItem> menu;
   private int menuCount;
+  
   public Menu(){
     menu = new ArrayList<MenuItem>(25);
     menuCount = menu.size();
@@ -33,13 +34,13 @@ public class Menu{
     return items;
   }
   
-  //why not void
+
   public MenuItem add(MenuItem item){
-    menu.add(item);
+    this.menu.add(item);
     return item;
   }
   
-  //why not void
+ 
   public MenuItem remove(String item){
     for(int i = 0; i < menu.size(); i++){
       if(item.equals(menu.get(i).toString())){
