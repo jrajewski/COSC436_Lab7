@@ -1,3 +1,7 @@
+package cosc436_lab7;
+
+
+
 public class MenuItem{
   private String description;
   private boolean vegetarian;

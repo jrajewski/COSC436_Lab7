@@ -1,5 +1,4 @@
-
-import cosc436_lab7.CMDAddItem;
+package cosc436_lab7;
 
 public class Invoker{
   private Aggregator aggregator;
@@ -11,11 +10,25 @@ public class Invoker{
   public MenuItem addItem(MenuItem item){
       //how do you reference the CMDAddItem obejct?
     CMDAddItem addItem = new CMDAddItem(aggregator, item);
+    addItem.execute();
     return item;
   }
   
-  public MenuItem removeItem(String name){
-    
+  public String removeItem(String name){
+    CMDRemoveItem removeItem = new CMDRemoveItem(aggregator, name);
+    removeItem.execute();
+    return name;
   }
+  
+  public String[] getMenu(){
+    CMDGetItems getItems = new CMDGetItems(aggregator);
+    return getItems.execute();
+  }
+  
+  public Integer getNumVegetarian(){
+      CMDGetNumVegetarian numVegetarian = new CMDGetNumVegetarian(aggregator);
+      return numVegetarian.execute();
+  }
+  
   
 }

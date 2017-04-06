@@ -1,8 +1,11 @@
+package cosc436_lab7;
+
 public class SystemInterface{
   private static Invoker invoker;
   
   public static Invoker setInvoker(Invoker invoker){
-  
+      SystemInterface.invoker = invoker;
+      return invoker;
   }
   
   public static String[] addItem(String name, boolean vegetarian){
@@ -12,16 +15,18 @@ public class SystemInterface{
   }
   
   public static String[] removeItem(String name){
-    MenuItem item = invoker.removeItem(name);
-    String[] itemArray = {item.toString()};
+    invoker.removeItem(name);
+    String[] itemArray = {name};
     return itemArray;
   }
   
   public static String[] getItems(){
-  
+      return invoker.getMenu(); 
   }
   
   public static String[] getNumVegetarian(){
-    
+      //console output shows incorrect characters insted of the number of vegetarian items
+      String[] numVegetarian = {invoker.getNumVegetarian().toString()};
+      return numVegetarian;
   }
 }

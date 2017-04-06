@@ -1,26 +1,25 @@
-package cosc436_lab7;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package cosc436_lab7;
 
 /**
  *
  * @author ringo
  */
-public class CMDAddItem implements CommandInterface{
+public class CMDRemoveItem implements CommandInterface{
     private Aggregator agg;
-    private MenuItem item;
+    private String itemName;
     
-    public CMDAddItem(Aggregator agg, MenuItem item){
+    public CMDRemoveItem (Aggregator agg, String itemName){
         this.agg = agg;
-        this.item = item;
+        this.itemName = itemName;
     }
-    
+
     public MenuItem execute(){
-        this.agg.getMenu().add(this.item);
-        return item;
+        Menu menu = agg.getMenu();
+        return menu.remove(this.itemName);
     }
 }
